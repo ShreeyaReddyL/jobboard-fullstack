@@ -6,9 +6,6 @@ import "./index.css";
 import { AuthProvider } from "./context/AuthContext";
 import { Toaster } from "react-hot-toast";
 
-console.log("Main.jsx is executing");
-console.log("Root element:", document.getElementById("root"));
-
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
