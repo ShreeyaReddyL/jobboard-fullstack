@@ -24,7 +24,6 @@ export const register = async (req, res) => {
       id: "user_" + Date.now(),
       name,
       email,
-      email,
       role: role || "user"
     };
     
