@@ -5,14 +5,14 @@ import cors from "cors";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
-import connectDB from "./config/db.js";
+import connectDB from "../src/config/db.js";
 
 // Import routes
-import authRoutes from "./routes/auth.js";
-import jobRoutes from "./routes/jobs.js";
-import appRoutes from "./routes/applications.js";
-import adminRoutes from "./routes/admin.js";
-import errorHandler from "./middleware/errorHandler.js";
+import authRoutes from "../src/routes/auth.js";
+import jobRoutes from "../src/routes/jobs.js";
+import appRoutes from "../src/routes/applications.js";
+import adminRoutes from "../src/routes/admin.js";
+import errorHandler from "../src/middleware/errorHandler.js";
 
 dotenv.config();
 
@@ -53,12 +53,4 @@ app.get("/", (req, res) => res.json({ message: "JobBoard API is running" }));
 // error handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-
-// For Vercel deployment
 export default app;
-
-// For local development
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-}
